@@ -9,5 +9,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Install required Python packages
+        run: pip install -r $GITHUB_WORKSPACE/requirements.txt
+
       - name: Run bibtex_shortener script
         run: python3 $GITHUB_WORKSPACE/bibtex_shortener.py $GITHUB_WORKSPACE/test/biblio.bib
